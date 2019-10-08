@@ -13,7 +13,7 @@ modeleval(target, data, timeouttime = 60)
 Other important parameters are given in function discription. 
 
 
-![Example using the iris dataset with Sepal.Length as target](https://github.com/codychampion/modelbench/blob/master/irislength.png)
+![Example using the iris dataset with Sepal.Length as target](https://github.com/codychampion/Caret-Model-Evaluation/blob/master/irislength.png)
 
 
 Some issues with this package are it will not work with the timeout option on Windows, Linux is needed.  Additionally, caret and all dependencies need to be installed (use caret-setup-deLuxe.R).
