@@ -1,6 +1,6 @@
 # caret-machine-learning eval
 
-The caret package [(WIKI)](http://topepo.github.io/caret/index.html) unifies the syntax for about 200 classification and regression models.  However, picking a model is often a subjective task.  This package aims to provide an example of how to iterate through all available models and quantity choose the best.  
+The caret package [(WIKI)](http://topepo.github.io/caret/index.html) unifies the syntax for about 200 classification and regression models.  However, picking a model is often a subjective task.  This package aims to provide an example of how to iterate through all available models and quantity inorder to choose the best.  
 
 Use case is shown below:
 
