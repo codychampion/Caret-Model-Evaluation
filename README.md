@@ -22,11 +22,17 @@ library(devtools)
 install_github("codychampion/Caret-Model-Evaluation")
 ```
 
-Once the package is installed make sure you have a complete installation of caret and ALL dependencies.
+Once the package is installed make sure you have a complete installation of caret and ALL dependencies.  This can be done using this command:
+
+```r
+install.packages("caret",
+                 repos = "http://cran.r-project.org", 
+                 dependencies = c("Depends", "Imports", "Suggests"))
+```
 
 
 
 
-Some issues with this package are it will not work with the timeout option on Windows, Linux is needed.  Additionally, caret and all dependencies need to be installed (use caret-setup-deLuxe.R).
+Some issues with this package are it will not work with the timeout option on Windows, Linux is needed.
 
 ---
