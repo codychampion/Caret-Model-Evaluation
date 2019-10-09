@@ -16,14 +16,13 @@ Other important parameters are given in function discription.
 ![Example using the iris dataset with Sepal.Length as target](https://github.com/codychampion/Caret-Model-Evaluation/blob/master/irislength.png)
 
 # Install
-Simply grab from github
+Simply grab from github.
 ```r
 library(devtools)
 install_github("codychampion/Caret-Model-Evaluation")
 ```
 
-Once the package is intalled make sure you have a complete installation of caret and ALL dependancies. 
-
+Once the package is installed make sure you have a complete installation of caret and ALL dependencies.
 
 
 
