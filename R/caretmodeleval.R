@@ -165,7 +165,7 @@ modeleval <- function(target, data, timeouttime = 60, metric, holdout = .8, trai
   }
 
   #This returns an orderlist of
-  outfinal <- outfinal[complete.cases(outfinal),]
+  complete <- outfinal[complete.cases(outfinal),]
   if(order == "accending"){outfinal <- complete[order(-complete[,2]),]}
   if(order == "decending"){outfinal <- complete[order(complete[,2]),]}
 
