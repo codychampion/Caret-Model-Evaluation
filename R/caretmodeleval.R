@@ -50,7 +50,7 @@ modeleval <- function(target, data, timeouttime = 60, metric, holdout = .8, trai
       TrainClasses <- subset(train, select = c(target))
       
       model <- train(
-        ax = TrainData, 
+        x = TrainData, 
         y = TrainClasses,
         data = train,
         method = modNames[i],
