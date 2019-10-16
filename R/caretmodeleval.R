@@ -49,10 +49,11 @@ modeleval <- function(target, data, timeouttime = 60, metric, holdout = .8, trai
       TrainData <- train[!rownames(train) %in% target, ]
       TrainClasses <- subset(train, select = c(target))
       
+
+      
       model <- train(
         x = TrainData, 
-        y = TrainClasses,
-        data = train,
+        y = TrainClasses[,1],
         method = modNames[i],
         trControl = control
       )
