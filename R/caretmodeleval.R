@@ -46,8 +46,12 @@ modeleval <- function(target, data, timeouttime = 60, metric, holdout = .8, trai
 
     #We can define accuracy throught several different metrics
     accuracy <- function(target, train, test, modNames, i, metric) {
+      TrainData <- train[!rownames(train) %in% target, ]
+      TrainClasses <- subset(train, select = c(target))
+      
       model <- train(
-        as.formula(paste(target, "~ .", sep = " ")),
+        ax = TrainData, 
+        y = TrainClasses,
         data = train,
         method = modNames[i],
         trControl = control
