@@ -1,43 +1,63 @@
 # Caret Model Evaluation
 
-The caret package [(wiki)](http://topepo.github.io/caret/index.html) unifies the syntax for about 200 classification and regression models.  However, picking a model is often a subjective task.  This package aims to provide an example of how to iterate through all available models and quantify accuracy.  
+![Status](https://img.shields.io/badge/status-archived-64748b)
+![R](https://img.shields.io/badge/R-caret-276dc3)
+![Domain](https://img.shields.io/badge/domain-model%20evaluation-2f6f4e)
 
+Archived R utilities for comparing many `caret` models against a supervised learning target.
 
-# Install
-Simply grab from github.
+This repository is preserved as earlier statistical ML work. It is useful as a compact example of programmatically iterating through `caret` model families, recording model performance, and comparing results. It is not actively maintained.
+
+## What it does
+
+The `caret` package provides a common interface across many classification and regression models. This repo explores a simple question: instead of choosing a model family by hand, can we iterate across available `caret` models and compare performance in a consistent way?
+
+The core function is implemented in:
+
+| File | Purpose |
+|---|---|
+| `R/caretmodeleval.R` | Runs model evaluation across available `caret` models with timeout handling. |
+| `DESCRIPTION` | Minimal R package metadata. |
+| `irislength.png` | Example output plot from the iris dataset. |
+
+## Historical usage
+
+Install from GitHub:
+
 ```r
 library(devtools)
 install_github("codychampion/Caret-Model-Evaluation")
 ```
 
-Once the package is installed make sure you have a complete installation of caret and ALL dependencies.  This can be done using this command:
+Install `caret` with its suggested dependencies:
 
 ```r
-install.packages("caret",
-                 repos = "http://cran.r-project.org", 
-                 dependencies = c("Depends", "Imports", "Suggests"))
+install.packages(
+  "caret",
+  repos = "http://cran.r-project.org",
+  dependencies = c("Depends", "Imports", "Suggests")
+)
 ```
 
-
-# Usage
-
-Use case is shown below:
+Example:
 
 ```r
 library(datasets)
-data <- data(iris)
-target <- "Septal.Length"
-modeleval(target, data, timeouttime = 60)
+
+data(iris)
+target <- "Sepal.Length"
+modeleval(target, iris, timeouttime = 60)
 ```
-Other important parameters are given in function discription. 
 
-# Example output 
+## Example output
 
-The following is a graph showing optimal models for the iris dataset for Sepal length prediction as evaulesed by R2.
+The original example evaluates models for `Sepal.Length` prediction on the iris dataset and plots model performance by `R2`.
 
-![Example using the iris dataset with Sepal.Length as target](https://github.com/codychampion/Caret-Model-Evaluation/blob/master/irislength.png)
+![Example using the iris dataset with Sepal.Length as target](irislength.png)
 
-# Issues
-Some issues with this package are it will not work with the timeout option on Windows, Linux is needed.
+## Limitations
 
----
+- This is archived research/learning code, not a maintained package.
+- The timeout workflow was written for Linux and may not work on Windows.
+- `caret` model availability depends on local package installation and optional dependencies.
+- Results should be treated as exploratory model-screening output, not final statistical validation.
